@@ -1,95 +1,90 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import { Box } from "@chakra-ui/react";
+import { Background } from "./components/global-components/background";
+import { useEffect, useState } from "react";
+import SignInButton from "./components/global-components/sign-in-button";
+import Pin from "./components/logged-out/pin";
+import { UserStatus } from "@/enums/enums";
 
-export default function Home() {
+import { Info } from "./components/global-components/info";
+import Menu from "./components/logged-in/menu";
+import Loading from "./loading";
+import axios from "axios";
+
+const App: React.FC = () => {
+  const [userStatus, setUserStatusTo] = useState<UserStatus>(
+    UserStatus.LoggedOut
+  );
+  const getStatusClass = (): string => {
+    return userStatus.replace(/\s+/g, "-").toLowerCase();
+  };
+  console.log(getStatusClass());
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Box backgroundColor={"gray.700"} h={"100%"} w={"100%"}>
+      <Box
+        bottom={
+          userStatus === UserStatus.LoggedOut ||
+          userStatus === UserStatus.LoggingIn
+            ? "0px"
+            : undefined
+        }
+        left={
+          userStatus === UserStatus.LoggedOut ||
+          userStatus === UserStatus.LoggingIn
+            ? "0px"
+            : undefined
+        }
+        margin={"40px"}
+        marginLeft={userStatus === UserStatus.LoggedOut ? "40px" : "0px"}
+        opacity={
+          userStatus === UserStatus.LoggedIn ||
+          userStatus === UserStatus.LoggedOut
+            ? 1
+            : 0
+        }
+        position={"absolute"}
+        transform={
+          userStatus === UserStatus.LoggedOut ||
+          userStatus === UserStatus.LoggingIn
+            ? "translateX(0%)"
+            : "translateX(-100%)"
+        }
+        transition={"margin 250ms, opacity 250ms, transform 250ms"}
+        zIndex={3}
+      >
+        <Info userStatus={userStatus} />
+      </Box>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <Pin userStatus={userStatus} setUserStatusTo={setUserStatusTo} />
+      <Menu userStatus={userStatus} setUserStatusTo={setUserStatusTo} />
+
+      <Background userStatus={userStatus} setUserStatusTo={setUserStatusTo} />
+
+      <Box
+        opacity={userStatus === UserStatus.LoggedOut ? 1 : 0}
+        position={"absolute"}
+        pointerEvents={userStatus === UserStatus.LoggedOut ? "all" : "none"}
+        bottom={0}
+        left={"50%"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        zIndex={2}
+        transform={
+          userStatus === UserStatus.LoggedOut
+            ? "translate(-50%, -40px)"
+            : "translate(-50%, 40px)"
+        }
+        transition={"opacity 250ms, transform 250ms"}
+      >
+        <SignInButton
+          userStatus={userStatus}
+          setUserStatusTo={setUserStatusTo}
         />
-      </div>
+      </Box>
+      <Loading userStatus={userStatus} />
+    </Box>
+  );
+};
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default App;
