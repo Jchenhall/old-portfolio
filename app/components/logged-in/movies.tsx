@@ -11,7 +11,8 @@ export const Movies: React.FC = () => {
         icon: "fa-solid fa-galaxy",
         image:
           "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        title: "Protectors of the Milky Way",
+        title: "Protectors of Democracy",
+        localImage: "DE.png",
         bgGradient:
           "linear(to-t, rgba(57, 73, 171, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
@@ -21,7 +22,8 @@ export const Movies: React.FC = () => {
         icon: "fa-solid fa-hat-wizard",
         image:
           "https://images.unsplash.com/photo-1535666669445-e8c15cd2e7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bG9yZCUyMG9mJTIwdGhlJTIwcmluZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        title: "Hole People",
+        title: "Relax by the sea",
+        localImage: "Oasis.png",
         bgGradient:
           "linear(to-t, rgba(103, 58, 183, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
@@ -31,7 +33,8 @@ export const Movies: React.FC = () => {
         icon: "fa-solid fa-broom-ball",
         image:
           "https://images.unsplash.com/photo-1632266484284-a11d9e3a460a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        title: "Pot of Hair",
+        title: "Fire & Blood",
+        localImage: "Mando.png",
         bgGradient:
           "linear(to-t, rgba(239, 83, 80, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
@@ -41,13 +44,15 @@ export const Movies: React.FC = () => {
         icon: "fa-solid fa-starship-freighter",
         image:
           "https://images.unsplash.com/photo-1533613220915-609f661a6fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        title: "Area Fights",
+        localImage: "nekron1.png",
+        title: "Submerged",
         bgGradient:
           "linear(to-t, rgba(42, 252, 152, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
     ].map((movie: any) => {
       const movieStyles: any = {
         backgroundImage: `url(${movie.image})`,
+        backgroundUrl: `url(/${movie.localImage})`,
         bgGradient: `${movie.bgGradient}`,
       };
 
@@ -73,7 +78,8 @@ export const Movies: React.FC = () => {
         >
           <Box
             className="movie-card-background background-image"
-            backgroundImage={movieStyles.backgroundImage}
+            // backgroundImage={movieStyles.backgroundImage}
+            bgImage={movieStyles.backgroundUrl}
             borderRadius={"10px"}
             height={"100%"}
             left={"0px"}
@@ -131,7 +137,7 @@ export const Movies: React.FC = () => {
       icon="fa-solid fa-camera-movie"
       id="movies-section"
       scrollable
-      title="Popcorn time!"
+      title="Blender renders and Photoshop!"
     >
       {getMovies()}
     </MenuSection>

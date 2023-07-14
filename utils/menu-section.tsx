@@ -1,5 +1,5 @@
 "use client";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, HStack, Heading, Text } from "@chakra-ui/react";
 import ScrollableComponent from "./scrollable-component";
 
 interface MenuSectionProps {
@@ -23,14 +23,27 @@ const MenuSection: React.FC<MenuSectionProps> = ({
     }
 
     return (
-      <Box marginTop={"15px"} paddingTop={"5px"}>
+      <HStack
+        display={"flex"}
+        justifyContent={"center"}
+        marginTop={"15px"}
+        paddingTop={"5px"}
+        id={id}
+        flexWrap={"wrap"}
+        gap={"10px"}
+      >
         {children}
-      </Box>
+      </HStack>
     );
   };
-
+  console.log("id", id);
   return (
-    <Box id={id} className="menu-section" marginTop={"60px"}>
+    <Box
+      id={id}
+      className="menu-section"
+      marginTop={"60px"}
+      flexWrap={id == "skill-section" ? "wrap" : undefined}
+    >
       <Box
         className="menu-section-title"
         alignItems={"center"}

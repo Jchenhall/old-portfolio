@@ -11,18 +11,22 @@ export const QuickNav: React.FC = (props: any) => {
       },
       {
         id: 2,
-        label: "Skill set",
+        label: "CV",
       },
       {
         id: 3,
-        label: "Projects",
+        label: "Skill set",
       },
       {
         id: 4,
-        label: "About",
+        label: "Projects",
       },
       {
         id: 5,
+        label: "About",
+      },
+      {
+        id: 6,
         label: "Contact",
       },
     ].map((item: any) => {

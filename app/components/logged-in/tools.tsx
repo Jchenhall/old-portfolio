@@ -117,7 +117,7 @@ export const Tools: React.FC = () => {
             >
               <Text
                 className="tool-card-label"
-                color={"blue.500"}
+                color={"orange.500"}
                 fontSize={"0.8em"}
                 textTransform={"uppercase"}
               >
@@ -142,7 +142,7 @@ export const Tools: React.FC = () => {
     <MenuSection
       icon="fa-solid fa-toolbox"
       id="tools-section"
-      title="What's Appening?"
+      title="My coding projects"
       scrollable
     >
       {getTools()}

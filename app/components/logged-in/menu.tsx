@@ -10,8 +10,9 @@ import { Restaurants } from "./restaurants";
 import { Tools } from "./tools";
 import { Weather } from "./weather";
 import { Dispatch, SetStateAction } from "react";
-import { Box, Heading, VStack, transition } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import SignInButton from "../global-components/sign-in-button";
+import { Skills } from "./skills";
 
 type MenuProps = {
   userStatus: UserStatus;
@@ -55,7 +56,6 @@ const Menu: React.FC<MenuProps> = ({ userStatus, setUserStatusTo }) => {
           >
             <Box className="app-menu-content-header-section">
               <Info userStatus={userStatus} />
-              <Reminder />
             </Box>
             <Box className="app-menu-content-header-section">
               <SignInButton
@@ -64,21 +64,24 @@ const Menu: React.FC<MenuProps> = ({ userStatus, setUserStatusTo }) => {
               />
             </Box>
           </Box>
+          {/* <Weather /> */}
           <QuickNav />
-          <a
-            id="youtube-link"
-            className="clear-button"
-            href="https://www.youtube.com/c/Hyperplexed"
-            target="_blank"
-            rel="noreferrer"
+          <Reminder />
+          <Heading
+            color={"whiteAlpha.800"}
+            fontSize={"2em"}
+            marginTop={"10px"}
+            textShadow={"2px 4px 4px rgba(0,0,0,0.6)"}
           >
-            <i className="fa-brands fa-youtube" />
-            <Heading color={"whiteAlpha.800"} fontSize={"2em"}>
-              Xoda1609
-            </Heading>
-          </a>
-          <Weather />
-          <Restaurants />
+            For the last two years I have been working as a contractor with
+            Nology on a Next.js/React platform for Osprey Flight Solutions. I am
+            hard working, enthusiastic and am looking for a position that will
+            help develop my skills and career.
+          </Heading>
+
+          <Skills />
+
+          {/* <Restaurants /> */}
           <Tools />
           <Movies />
         </Box>

@@ -1,5 +1,4 @@
 "use client";
-import { N } from "@/utils/number-util";
 import { Box } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -7,7 +6,7 @@ export const WeatherSnap: React.FC = () => {
   const [weather, setWeather] = useState<any>({});
   const getData = async () => {
     await axios
-      // .get("https://api.ipify.org/?format=json")
+
       .get(
         "https://api-bdc.net/data/ip-geolocation?key=bdc_1d5bbb07eb374d60ac3c0ddb6950972e"
       )
@@ -17,10 +16,10 @@ export const WeatherSnap: React.FC = () => {
       .then(async (ip) => {
         await axios
           .get(
-            `https://api.weatherapi.com/v1/current.json?q=${ip}&key=cc0c30ef4f414185ada224930230907`
+            `https://api.weatherapi.com/v1/forecast.json?q=${ip}&days=7&key=cc0c30ef4f414185ada224930230907`
           )
           .then((response) => {
-            setWeather(response.data.current);
+            setWeather(response.data.forecast.forecastday); // firstData is still an empty Object here for some reason
           });
       });
   };
@@ -45,7 +44,7 @@ export const WeatherSnap: React.FC = () => {
         h={"20px"}
         marginLeft={"5px"}
       >
-        {weather?.temp_c}
+        {weather[0]?.day?.avgtemp_c}
       </Box>
       <Box
         className="weather-temperature-unit"
