@@ -1,9 +1,8 @@
 "use client";
 import { useCurrentDateEffect } from "@/context/date";
-import { UserStatus } from "@/enums/enums";
+
 import { T } from "@/utils/time-util";
-import { Box, Heading } from "@chakra-ui/react";
-import { Dispatch, SetStateAction } from "react";
+import { Heading } from "@chakra-ui/react";
 
 const Time: React.FC = () => {
   const date: Date = useCurrentDateEffect();

@@ -6,46 +6,98 @@ export const Movies: React.FC = () => {
   const getMovies = (): JSX.Element[] => {
     return [
       {
-        desc: "A tale of some people watching over a large portion of space.",
+        desc: "",
         id: 1,
-        icon: "fa-solid fa-galaxy",
-        image:
-          "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFydmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        title: "Protectors of Democracy",
+        title: "",
         localImage: "DE.png",
         bgGradient:
           "linear(to-t, rgba(57, 73, 171, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
       {
-        desc: "Some people leave their holes to disrupt some things.",
+        desc: "",
         id: 2,
-        icon: "fa-solid fa-hat-wizard",
-        image:
-          "https://images.unsplash.com/photo-1535666669445-e8c15cd2e7d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bG9yZCUyMG9mJTIwdGhlJTIwcmluZ3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-        title: "Relax by the sea",
+        title: "",
         localImage: "Oasis.png",
         bgGradient:
           "linear(to-t, rgba(103, 58, 183, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
       {
-        desc: "A boy with a dent in his head tries to stop a bad guy. And by bad I mean bad at winning.",
+        desc: "",
         id: 3,
-        icon: "fa-solid fa-broom-ball",
-        image:
-          "https://images.unsplash.com/photo-1632266484284-a11d9e3a460a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhcnJ5JTIwcG90dGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-        title: "Fire & Blood",
+        title: "",
         localImage: "Mando.png",
         bgGradient:
           "linear(to-t, rgba(239, 83, 80, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
       {
-        desc: "A long drawn out story of some people fighting over some space. Cuz there isn't enough of it.",
+        desc: "",
         id: 4,
-        icon: "fa-solid fa-starship-freighter",
-        image:
-          "https://images.unsplash.com/photo-1533613220915-609f661a6fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
         localImage: "nekron1.png",
-        title: "Submerged",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(42, 252, 152, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 5,
+        localImage: "animalsm1.png",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(57, 73, 171, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 6,
+        localImage: "animalsm2.png",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(103, 58, 183, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 7,
+        localImage: "animalsm3.png",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(239, 83, 80, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 8,
+        localImage: "card1.png",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(42, 252, 152, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 9,
+        localImage: "card2.png",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(57, 73, 171, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 10,
+        localImage: "card3.png",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(103, 58, 183, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 11,
+        localImage: "card4.png",
+        title: "",
+        bgGradient:
+          "linear(to-t, rgba(239, 83, 80, 0.5), transparent, rgba(0,0,0, 0.4))",
+      },
+      {
+        desc: "",
+        id: 12,
+        localImage: "osh2.jpg",
+        title: "",
         bgGradient:
           "linear(to-t, rgba(42, 252, 152, 0.5), transparent, rgba(0,0,0, 0.4))",
       },
