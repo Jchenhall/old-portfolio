@@ -179,10 +179,9 @@ export const Skills: React.FC = () => {
               <Text
                 position={"absolute"}
                 className="skill-card-name"
-                color={"whiteAlpha.800"}
+                color={"orange.400"}
                 fontSize={"1.25em"}
                 opacity={1}
-                _hover={{ opacity: 1 }}
                 transition={"opacity 250ms"}
               >
                 {skill.name}

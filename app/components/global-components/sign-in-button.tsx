@@ -67,12 +67,13 @@ const SignInButton: React.FC<SignInButtonProps> = ({
       borderColor={"rgba(255, 255, 255, .1)"}
       backdropFilter={"blur(3px)"}
       borderRadius={"3xl"}
+      color={"whiteAlpha.900"}
       boxShadow={"2px 2px 2px rgba(0,0,0, 0.1)"}
       _hover={{
         transform: "scale(1.2)",
         bgColor: "rgba(255, 255, 255, .2)",
         borderColor: "rgba(255, 255, 255, .3)",
-        color: "whiteAlpha.900",
+        color: "orange.400",
       }}
       disabled={userStatus === userStatus}
       onClick={handleOnClick}
